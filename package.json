@@ -1,49 +1,51 @@
 {
-  "name": "@artiqlize/stylize",
+  "name": "@artiq/stylize",
   "version": "1.0.0",
+  "description": "A terminal text stylizer with ANSI color support and modular styling system — supports chaining, style composition, proxy-based API, and multiple styling modes.",
   "type": "module",
   "exports": {
-    ".": "./stylish/stylize.js"
+    ".": {
+      "import": "./stylish/stylize.js",
+      "default": "./stylish/stylize.js"
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "test": "node ./samples/testStylize.js"
   },
-  "author": "Dimas Fajar",
   "files": [
-    "constants/",
-    "parser/",
-    "resolves/",
     "stylish/",
-    "utils/",
-    "validators/",
-    "wrappers/",
-    "CHANGELOG.md",
-    "README.md",
-    "LICENSE"
+    "LICENSE",
+    "README.md"
   ],
-  "license": "MIT",
-  "description": "Modular library for ANSI styling in Node.js.",
-  "engines": {
-    "node": ">=18.0.0"
+  "keywords": [
+    "terminal",
+    "style",
+    "ansi",
+    "chalk",
+    "color",
+    "figlet",
+    "cli",
+    "stylizer",
+    "proxy",
+    "ansi-colors",
+    "text",
+    "formatting"
+  ],
+  "author": {
+    "name": "Dimas Fajar",
+    "url": "https://github.com/fajardison"
   },
-  "homepage": "https://github.com/fajardison/artiqlize/stylize",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fajardison/artiqlize/stylize.git"
+    "url": "https://github.com/fajardison/artiq.git"
   },
   "bugs": {
-    "url": "https://github.com/fajardison/artiqlize/stylize/issues"
+    "url": "https://github.com/fajardison/artiq/issues"
   },
-  "keywords": [
-    "artiqlize",
-    "artistic",
-    "fonts",
-    "style",
-    "stylish",
-    "ansi",
-    "ascii",
-    "modular",
-    "art",
-    "esm"
-  ]
+  "homepage": "https://github.com/fajardison/artiq#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
