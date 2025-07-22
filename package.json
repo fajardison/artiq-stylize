@@ -1,0 +1,49 @@
+{
+  "name": "@articlize/stylize",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./stylish/stylize.js"
+  },
+  "scripts": {
+    "test": "node ./samples/testStylize.js"
+  },
+  "author": "Dimas Fajar",
+  "files": [
+    "constants/",
+    "parser/",
+    "resolves/",
+    "stylish/",
+    "utils/",
+    "validators/",
+    "wrappers/",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "description": "Modular library for ANSI styling in Node.js.",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "homepage": "https://github.com/fajardison/articlize/stylize",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fajardison/articlize/stylize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fajardison/articlize/stylize/issues"
+  },
+  "keywords": [
+    "articlize",
+    "artistic",
+    "fonts",
+    "style",
+    "stylish",
+    "ansi",
+    "ascii",
+    "modular",
+    "art",
+    "esm"
+  ]
+}
