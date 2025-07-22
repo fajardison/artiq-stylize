@@ -14,7 +14,7 @@
 
 - 🖍️ Terminal text styling: bold, italic, underline, foreground/background color  
 - 🎲 Supports `random` and `sequence` modes for applying styles  
-- 🔗 Proxy-style chaining API like `chalk` (`stylize.bold.red('text')`)  
+- 🔗 Proxy-style chaining API (`stylize.bold.red('text')`)  
 - 🧱 Modular design: separate functions for proxy, wrapping, resolving, parsing  
 - 🧪 Style validation and text-splitting modes  
 - 📁 Supports structure modes: `char`, `word`, `line`, and `full`  
