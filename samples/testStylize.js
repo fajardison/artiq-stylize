@@ -1,4 +1,4 @@
-import stylize from '@artiqlize/stylize'
+import stylize from '@artiq/stylize'
 
 const styleSets = [
   ['red', 'bold'],
