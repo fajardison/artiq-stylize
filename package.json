@@ -1,5 +1,5 @@
 {
-  "name": "@articlize/stylize",
+  "name": "@artiqlize/stylize",
   "version": "1.0.0",
   "type": "module",
   "exports": {
@@ -26,16 +26,16 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "homepage": "https://github.com/fajardison/articlize/stylize",
+  "homepage": "https://github.com/fajardison/artiqlize/stylize",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fajardison/articlize/stylize.git"
+    "url": "git+https://github.com/fajardison/artiqlize/stylize.git"
   },
   "bugs": {
-    "url": "https://github.com/fajardison/articlize/stylize/issues"
+    "url": "https://github.com/fajardison/artiqlize/stylize/issues"
   },
   "keywords": [
-    "articlize",
+    "artiqlize",
     "artistic",
     "fonts",
     "style",
