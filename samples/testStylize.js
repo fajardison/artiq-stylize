@@ -9,25 +9,25 @@ const styleSets = [
 
 console.log('== Stylize 1 kalimat penuh (default) ==')
 console.log(
-  stylize('ARTISTIC OUTPUT', styleSets, { randomize: true })
+  stylize('ARTIQ OUTPUT', styleSets, { randomize: true })
 )
 console.log('\n')
 
 console.log('== Stylize per kata (urut gaya atau acak) ==')
 console.log(
-  stylize('ARTISTIC OUTPUT IN COLOR', styleSets, { style: 'word' })
+  stylize('ARTIQ OUTPUT IN COLOR', styleSets, { style: 'word' })
 )
 console.log(
-  stylize('ARTISTIC OUTPUT IN COLOR', styleSets, { style: 'word', randomize: true }) // error karena seharusnya bukan world tapi word
+  stylize('ARTIQ OUTPUT IN COLOR', styleSets, { style: 'word', randomize: true }) // error karena seharusnya bukan world tapi word
 )
 console.log('\n')
 
 console.log('== Stylize per karakter ==')
 console.log(
-  stylize('ARTISTIC', styleSets, { style: 'char' })
+  stylize('ARTIQ', styleSets, { style: 'char' })
 )
 console.log(
-  stylize('ARTISTIC', styleSets, { style: 'char', randomize: true })
+  stylize('ARTIQ', styleSets, { style: 'char', randomize: true })
 )
 console.log('\n')
 
@@ -69,7 +69,7 @@ console.log(stylize('Contoh latar belakang', stylesHEX,  { style: 'word' }))
 console.log(stylize('Gabungan', stylesHEX, { style: 'char', randomize: true }))
 
 
-const styled = stylize('Hello Artistic!', [
+const styled = stylize('Hello Artiq!', [
   ['bold', 'red'],
   ['italic', 'blue'],
   ['underline', 'green']
