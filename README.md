@@ -36,7 +36,7 @@ npm install @artiq/stylize
 ```js
 import stylize from '@artiq/stylize'
 
-const styled = stylize('Hello Artistic!', [
+const styled = stylize('Hello Artiq!', [
   ['bold', 'red'],
   ['italic', 'blue'],
   ['underline', 'green']
