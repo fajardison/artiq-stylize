@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-07-21
 ### Added
-- Initial release of `@artiqlize/stylize`
+- Initial release of `@artiq/stylize`
 - Support for basic text styles: `bold`, `italic`, `underline`, `dim`, `strikethrough`
 - Support for ANSI terminal colors (foreground and background)
 - Proxy-based chaining API (e.g., `stylize.bold.red('Text')`)
@@ -18,3 +18,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Style set validation and error handling
 - Modular architecture: style parser, resolver, text splitter, proxy creator
 - ESM-only module with support for Node.js >=18
+
