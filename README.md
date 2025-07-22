@@ -1,7 +1,7 @@
-# articlize stylize
+# artiqlize stylize
 
-[![npm version](https://img.shields.io/npm/v/@articlize/stylize)](https://www.npmjs.com/package/@articlize/stylize)
-[![Version](https://img.shields.io/badge/Version-v1.0.0-blue)](https://www.npmjs.com/package/@articlize/stylize?activeTab=versions)
+[![npm version](https://img.shields.io/npm/v/@artiqlize/stylize)](https://www.npmjs.com/package/@artiqlize/stylize)
+[![Version](https://img.shields.io/badge/Version-v1.0.0-blue)](https://www.npmjs.com/package/@artiqlize/stylize?activeTab=versions)
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 [![ESM](https://img.shields.io/badge/javascript-ESM-orange)](https://nodejs.org/api/esm.html)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-blue)](https://nodejs.org/)
@@ -24,7 +24,7 @@
 ## 📦 Installation
 
 ```bash
-npm install @articlize/stylize
+npm install @artiqlize/stylize
 ```
 
 > ⚠️ Not published to npm yet — use locally by cloning the repository.
@@ -36,7 +36,7 @@ npm install @articlize/stylize
 ### Direct Styling Mode
 
 ```js
-import stylize from '@articlize/stylize'
+import stylize from '@artiqlize/stylize'
 
 const styled = stylize('Hello Artistic!', [
   ['bold', 'red'],
@@ -57,7 +57,7 @@ console.log(output);
 ### Using Proxy Chaining API
 
 ```js
-import stylize from '@articlize/stylize'
+import stylize from '@artiqlize/stylize'
 
 console.log(stylize.bold.red('Bold Red'))
 console.log(stylize.italic.bgGreen('Italic with Green Background'))
