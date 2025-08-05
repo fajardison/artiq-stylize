@@ -1,7 +1,7 @@
 {
   "name": "@artiq/stylize",
-  "version": "1.0.0",
-  "description": "A terminal text stylizer with ANSI color support and modular styling system — supports chaining, style composition, proxy-based API, and multiple styling modes.",
+  "version": "1.0.1",
+  "description": "Lightweight terminal text stylizer with ANSI, RGB, HEX colors, multiple styling modes, and chainable proxy API.",
   "type": "module",
   "exports": {
     ".": {
@@ -14,22 +14,33 @@
     "test": "node ./samples/testStylize.js"
   },
   "files": [
+    "constants/",
+    "parser/",
+    "resolves/",
     "stylish/",
+    "utils/",
+    "validators/",
+    "wrappers/",
+    "doc/",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "keywords": [
     "terminal",
+    "stylish",
     "style",
     "ansi",
-    "chalk",
     "color",
+    "rgb",
+    "hex",
     "figlet",
     "cli",
     "stylizer",
-    "proxy",
     "ansi-colors",
+    "chalk-alternative",
     "text",
+    "text-style",
     "formatting"
   ],
   "author": {
@@ -46,6 +57,6 @@
   },
   "homepage": "https://github.com/fajardison/artiq#readme",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   }
 }
