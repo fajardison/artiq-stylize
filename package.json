@@ -1,6 +1,6 @@
 {
   "name": "@artiq/stylize",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lightweight terminal text stylizer with ANSI, RGB, HEX colors, multiple styling modes, and chainable proxy API.",
   "type": "module",
   "exports": {
