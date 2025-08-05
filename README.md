@@ -1,23 +1,20 @@
-# artiq stylize
+![npm](https://img.shields.io/npm/v/@artiq/stylize)
+![License](https://img.shields.io/npm/l/@artiq/stylize)
+![ESM](https://img.shields.io/badge/javascript-ESM-orange)
+![Node](https://img.shields.io/badge/node-%3E=22.0.0-green)
 
-[![npm version](https://img.shields.io/npm/v/@artiq/stylize)](https://www.npmjs.com/package/@artiq/stylize)
-[![Version](https://img.shields.io/badge/Version-v1.0.0-blue)](https://www.npmjs.com/package/@artiq/stylize?activeTab=versions)
-[![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
-[![ESM](https://img.shields.io/badge/javascript-ESM-orange)](https://nodejs.org/api/esm.html)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-blue)](https://nodejs.org/)
+# @artiq/stylize
 
-> A terminal text stylizer with ANSI color support and modular styling system — supports chaining, style composition, proxy-based API, and multiple styling modes.
+A minimalist ANSI styling tool for text formatting — made for simplicity, flexibility, and extensibility.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- 🖍️ Terminal text styling: bold, italic, underline, foreground/background color  
-- 🎲 Supports `random` and `sequence` modes for applying styles  
-- 🔗 Proxy-style chaining API (`stylize.bold.red('text')`)  
-- 🧱 Modular design: separate functions for proxy, wrapping, resolving, parsing  
-- 🧪 Style validation and text-splitting modes  
-- 📁 Supports structure modes: `char`, `word`, `line`, and `sentence`  
+- 🎨 **Rich Styling Support** – ANSI modifiers, foreground/background colors, 8-bit RGB, HEX
+- 🔗 **Chainable Proxy API** – Use `.bold.red.bgBlue(...)` with full IntelliSense
+- ⚙️ **Flexible Application** – Apply styles per character, word, line, or sentence
+- 🧪 **Runtime Safe** – Auto-validates styles and mode usage
 
 ---
 
@@ -27,81 +24,168 @@
 npm install @artiq/stylize
 ```
 
----
-
-## 🚀 Usage
-
-### Direct Styling Mode
-
-```js
-import stylize from '@artiq/stylize'
-
-const styled = stylize('Hello Artiq!', [
-  ['bold', 'red'],
-  ['italic', 'blue'],
-  ['underline', 'green']
-], { style: 'word' });
-
-console.log(styled);
-```
-
-```js
-const output = stylize("Colorful Text!", [
-  ['red', 'green', 'blue'],
-  ['yellow', 'magenta']
-], { style: 'char', randomize: true });
-
-console.log(output);
-```
-
-### Using Proxy Chaining API
-
-```js
-import stylize from '@artiq/stylize'
-
-console.log(stylize.bold.red('Bold Red'))
-console.log(stylize.italic.bgGreen('Italic with Green Background'))
-```
+> This package is **ESM only**, make sure you have `"type": "module"` in your `package.json`.
 
 ---
 
 ## 🎨 Supported Styles
 
-- **Text styles**: `bold`, `italic`, `underline`, `dim`, `strikethrough`  
-- **Foreground colors**: `red`, `blue`, `green`, `yellow`, `magenta`, etc.  
-- **Background colors**: `bgRed`, `bgBlue`, `bgYellow`, etc.  
-- **Bright variants**: `brightRed`, `bgBrightBlue`, etc.  
-- **RGB/HEX**: `rgb(255,0,0)`, `#FF0000`, `bg#00FF00`  
+### Modifiers
+```
+bold, dim, italic, underline, inverse, hidden, strikethrough
+```
+
+### Foreground Colors
+```
+black, red, green, yellow, blue, magenta, cyan, white,
+gray, brightRed, brightGreen, brightYellow, brightBlue, brightMagenta, brightCyan, brightWhite
+```
+
+### Background Colors
+
+Prefix with `bg` + capitalized color, e.g.:
+
+```
+bgRed, bgBlue, bgGreen, bgBrightCyan, bgWhite, etc.
+```
+
+> Each word will receive a random style from the `styleSets`.
 
 ---
 
-## 📘 Quick API
+## 📘 API Reference
 
 ### `stylize(text, styleSets, options?)`
 
-- `text`: the string to be styled  
-- `styleSets`: 2D array of style names  
-- `options`: optional object `{ style: 'char'|'word'|'line'|'full', randomize: boolean }`  
-
-### `createStylizeProxy()`
-
-Creates a proxy-style chaining API.
-
-### `applyStyles(text, styles[])`
-
-Applies a specific set of styles to the text directly.
+| Param       | Type         | Description                                         |
+|-------------|--------------|-----------------------------------------------------|
+| `text`      | `string`     | The raw text to stylize                             |
+| `styleSets` | `string[][]` | Array of style groups                               |
+| `options`   | `object`     | Optional: `style` (mode), `randomize` (boolean)     |
 
 ---
 
-## 🧪 StyleSet Example
+### `resolveAnsiStyles(styles: string[])`
 
+Resolve an array of styles to a single ANSI escape sequence.
+
+---
+
+## 🚀 Getting Started
+
+### Import package
+```js
+import stylize from '@artiq/stylize';
+```
+
+---
+
+### Basic Style
+```js
+console.log(stylize(
+  'HELLO ARTIQ',
+  [['bold', 'red']],
+  { style: 'word' }
+));
+
+console.log(stylize('HELLO STYLIZE', [['italic', 'green']]));
+```
+
+**Result:**
+![Alt Text](doc/basic-style1.png)  
+![Alt Text](doc/basic-style2.png)
+
+---
+
+### Using Multiple Styles (`styleSets`)
 ```js
 const styleSets = [
-  ['bold', 'red'],
-  ['italic', 'blue'],
-  ['underline', 'green']
+  ['green', 'bold'],
+  ['blue', 'italic'],
+  ['yellow', 'dim'],
+  ['magenta'],
+  ['cyan', 'underline']
 ];
+
+console.log(stylize(
+  'Stylize is fun and colorful!',
+  styleSets,
+  { style: 'word' }
+));
 ```
+
+**Result:**
+![Alt Text](doc/multiple-styles.png)
+
+---
+
+### Available Modes
+
+| Mode       | Description               |
+|------------|---------------------------|
+| `char`     | Apply style per character |
+| `word`     | Apply style per word      |
+| `line`     | Apply style per line      |
+| `sentence` | Apply style per sentence  |
+
+---
+
+### 🧩 Proxy API (Chaining Style)
+```js
+console.log(
+  stylize.yellow.bold.underline('HELLO ARTIQ STYLIZE')
+);
+```
+
+**Result:**
+![Alt Text](doc/chained-style.png)
+
+---
+
+### Custom RGB & HEX
+
+```js
+const stylesRGB = [
+  ['bold', 'rgb(255,0,0)'],
+  ['underline', 'rgb(0,255,0)'],
+  ['italic', 'rgb(0,0,255)'],
+  ['bgRgb(255,255,0)', 'black']
+];
+
+console.log(
+  stylize('Hello colorful style rgb', stylesRGB, { style: 'word', randomize: false })
+);
+
+const stylesHEX = [
+  ['#00FFFF', 'underline'],
+  ['#ff0000', 'strikethrough'],
+  ['bg#00FF00'],
+  ['bg#333333'],
+  ['dim']
+];
+
+console.log(stylize('Hello colorful style hex', stylesHEX, { style: 'word' }));
+```
+
+**Result:**
+![Alt Text](doc/rgb.png)  
+![Alt Text](doc/hex.png)
+
+---
+
+### 🔀 Advanced: Random & Gradient Application
+
+#### Randomize Style per Segment
+```js
+console.log(stylize(
+  'Random style fun',
+  [['red'], ['blue', 'italic'], ['green', 'underline']],
+  { style: 'word', randomize: true }
+));
+```
+
+**Result:**
+![Alt Text](doc/random-style.png)
 
 ---
 
