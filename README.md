@@ -92,8 +92,9 @@ console.log(stylize('HELLO STYLIZE', [['italic', 'green']]));
 ```
 
 **Result:**
-![Alt Text](doc/basic-style1.png)  
-![Alt Text](doc/basic-style2.png)
+![Basic Style 1](https://raw.githubusercontent.com/fajardison/artiq-stylize/refs/heads/main/doc/basic-style1.png)  
+![Basic Style 2](https://raw.githubusercontent.com/fajardison/artiq-stylize/refs/heads/main/doc/basic-style2.png)
+
 
 ---
 
@@ -115,7 +116,7 @@ console.log(stylize(
 ```
 
 **Result:**
-![Alt Text](doc/multiple-styles.png)
+![Multiple Stylize](https://raw.githubusercontent.com/fajardison/artiq-stylize/refs/heads/main/doc/multiple-styles.png)
 
 ---
 
@@ -138,7 +139,7 @@ console.log(
 ```
 
 **Result:**
-![Alt Text](doc/chained-style.png)
+![Chaining Style](https://raw.githubusercontent.com/fajardison/artiq-stylize/refs/heads/main/doc/chained-style.png)
 
 ---
 
@@ -168,8 +169,8 @@ console.log(stylize('Hello colorful style hex', stylesHEX, { style: 'word' }));
 ```
 
 **Result:**
-![Alt Text](doc/rgb.png)  
-![Alt Text](doc/hex.png)
+![RGB](https://raw.githubusercontent.com/fajardison/artiq-stylize/refs/heads/main/doc/rgb.png)  
+![HEX](https://raw.githubusercontent.com/fajardison/artiq-stylize/refs/heads/main/doc/hex.png)
 
 ---
 
@@ -185,7 +186,7 @@ console.log(stylize(
 ```
 
 **Result:**
-![Alt Text](doc/random-style.png)
+![Randomize Style](https://raw.githubusercontent.com/fajardison/artiq-stylize/refs/heads/main/doc/random-style.png)
 
 ---
 
