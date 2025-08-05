@@ -29,7 +29,10 @@ function stylize(text, styleSets = [['reset']], options = {}) {
       : styleSets[i % styleSets.length];
 
   const parts = parserStyle(text, style);
-  return parts.map((part, i) => applyStyles(part, pickStyle(i))).join('');
+  return parts.map((part, i) => {
+    return /^\s+$/.test(part) ? part : applyStyles(part, pickStyle(i));
+  }).join('');
+
 }
 
 /**
@@ -40,3 +43,4 @@ export default new Proxy(stylize, {
     return createStylizeProxy()[style];
   }
 });
+                    
