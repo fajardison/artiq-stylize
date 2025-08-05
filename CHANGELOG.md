@@ -6,8 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.0.4] - 2025-08-06
-## Fixed
-- **Updated `README.md` documentation**
+### Fixed
+- **Updated `README.md` documentation**  
 
 ## [1.0.3] - 2025-08-06
 ### Fixed
@@ -41,4 +41,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Style set validation and error handling
 - Modular architecture: style parser, resolver, text splitter, proxy creator
 - ESM-only module with support for Node.js >=22
-- 
